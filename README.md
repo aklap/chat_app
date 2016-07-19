@@ -1,0 +1,1 @@
+Simple chat app built with Node, Express, and plain JavaScript, using WebSocket API.
