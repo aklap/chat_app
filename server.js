@@ -57,7 +57,7 @@ wsServer.on('connection', function connection(ws) {
                 user.id = wsServer.clients.length;
                 activeMembers.push(user);
 
-                ws.send(JSON.stringify({type: "name", data: user}));
+                ws.send(JSON.stringify({type: "name", data: user.username}));
                 ws.broadcast(JSON.stringify({type:"loggedIn", data: activeMembers}));
                 break;
             case "user-message":
@@ -86,6 +86,7 @@ wsServer.on('connection', function connection(ws) {
         var find = activeMembers.indexOf(user.id);
         activeMembers.splice(find, 1);
         ws.broadcast(JSON.stringify({type: "numUsers", data: wsServer.clients.length}));
+        ws.broadcast(JSON.stringify({type:"loggedIn", data: activeMembers}));
     });
 });
 
