@@ -20,7 +20,7 @@ window.onload = function() {
         });
 
        //login to chat w/alias otherwise default to 'guest'
-       nameButton.addEventListener('submit', function(){
+       nameButton.addEventListener('submit', function(e){
             e.preventDefault();
             ws.send(JSON.stringify({type: "name", data: username.value}));
             username.value='';
@@ -68,8 +68,8 @@ window.onload = function() {
                     document.getElementById('all-msg').insertAdjacentHTML('beforeend', '<span class="msgs">' + msg.data + '</span></br>');
                     break;
                 case "name":
-                    user.username = msg.data.username;
-                    user.id = msg.data.id;
+                    user.username = msg.data;
+                    user.id = msg.id;
 
                     if (msg.data.username !== "Guest") {
                         document.getElementById('name-form').style.visibility='hidden';
@@ -91,7 +91,6 @@ window.onload = function() {
                     }
                     break;                
                 case "chatHistory":
-                    console.log(msg.data);
                     var allMsg = document.getElementById('all-msg');
 
                     for(var i = 0; i<msg.data.length; i++) {
