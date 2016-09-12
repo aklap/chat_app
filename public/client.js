@@ -100,13 +100,11 @@ window.onload = function() {
                     break;
 
                 case "name":
-
                     if (msg.data !== "Guest") {
                         document.getElementById('name-form').style.visibility='hidden';
                     } else {
                         document.getElementById('name-form').style.visibility='visible';
                     }
-
                     break;
 
                 //show when users are typing
