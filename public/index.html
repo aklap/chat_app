@@ -5,22 +5,50 @@
   <link rel="stylesheet" type="text/css" href="./style.css"/>
 </head>
 <body>
+
   <h2>Chat App</h2>
+
+  <!-- Chat room info -->
   <h6 id="numUsers">0 user(s) joined chat.</h6> 
   <h6 id="activeUsers">Active members:</h6> 
+
+  <!-- Display for all chat messages -->
   <div id="all-msg"></div>
 
+  <!-- Create chat identity alias -->
   <form id="name-form" action="#">
-      <input id="username" name="username">
+      <input id="username">
       <button id="name-button">Login</button>
   </form>
   
+  <!-- Post message in chatroom -->
   <form id="msg-form" action="#">
     <input id="msg" name="msg">
     <button id="msg-button">Send</button>
   </form>
 
+  <!-- Leave chat identity -->
   <button id="leave">Leave</button>
+
+  <!-- Send another use a private message -->
+  <h6 id='priv-header'>Private Messages</h6>
+
+  <div id='private-container'></div>
+
+  <button id="private-msg-display">Private Messages</button>
+
+  <form id="private-msg-form" action="#" class="hidden">
+    <h6>Send Private Message</h6>
+  
+    <h6>To:</h6>
+    <input id="privTo">
+
+    <h6>Message:</h6>
+    <input id="privMsg" name="privMsg">
+
+    <button id="privmsg-btn">Send</button>
+  </form>
+  
   <script src="./client.js"></script>
 </body>
 </html>

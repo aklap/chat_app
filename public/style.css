@@ -1,6 +1,24 @@
-#all-msg {
+#all-msg, #private-container {
     border: 5px solid black;
     width: 100;
     min-height: 100px;
     max-height: auto;
+}
+
+#priv-header{
+    border-top: 5px solid black;
+    padding: 5px;
+}
+
+#private-msg-form {
+    margin: 15px;
+    padding: 2px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.msgs {
+    display: block;
 }
